@@ -21,6 +21,7 @@ def printAll():#datas 전체 출력
 
 def printKeys():
     print('등록된 번호')
+    for i in datas:
         print(i, end=', ')
     print()
 def search():#검색결과가 있으면 튜플(key, val)반환. 없으면 None을 반환
