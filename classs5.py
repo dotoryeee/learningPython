@@ -11,6 +11,15 @@ class Product:
         print('가격:', self.price)
         print('수량:', self.quantity)
 
+
+
+
+
+#dao, service, menu, main
+
+#제품추가, 제품검색(번호/이름), 수정(번호로 검색해서 수정), 삭제(번호로 검색해서 삭제), 전체출력
+
+'''
 def main():
     p = [0]*3   #크기가 3인 리스트 정의
     for i in range(0, len(p)):#리스트 p의 길이만큼 반복
@@ -24,6 +33,4 @@ def main():
         i.printProductInfo()
 
 main()
-
-#dao, service, menu, main
-#제품추가, 제품검색(번호/이름), 수정(번호로 검색해서 수정), 삭제(번호로 검색해서 삭제), 전체출력
+'''
