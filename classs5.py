@@ -29,10 +29,11 @@ class DAO:
                 return i
 
     def update(self, data):
-        pass
+        editData = select(data)
+
 
     def delete(self, ID):
-
+        pass
 
 
 #제품추가, 제품검색(번호/이름), 수정(번호로 검색해서 수정), 삭제(번호로 검색해서 삭제), 전체출력
