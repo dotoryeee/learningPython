@@ -1,10 +1,12 @@
 #vo
 class Product:
-    def __init__(self, num, name, price, quantity):
-        self.num = num  #제품번호
+    count = 1
+    def __init__(self, name, price, quantity):
+        self.num = Product.count  #제품번호
         self.name = name    #제품명
         self.price = price  #가격
         self.quantity = quantity    #수량
+        Product.count += 1
 
     def printProductInfo(self):
         print('제품번호:', self.num)
@@ -55,15 +57,16 @@ class Service:
 
     def addProduct(self):
         print('제품추가')
+        '''
         p = 0
         while p!=None:
             num = int(input('num:'))
             p = self.dao.selectByNum(num)   #p가 None이면 중복되지 않은 번호이므로 루프를 빠져나감
+        '''
         name = input('name:')
         price = int(input('price:'))
         q = int(input('qunatity:'))
-
-        self.dao.insert(Product(num, name, price, q))
+        self.dao.insert(Product(name, price, q))
 
     def getProductByNum(self):
         print('제품 번호로 검색')
