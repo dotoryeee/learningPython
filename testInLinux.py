@@ -6,14 +6,10 @@ result = requests.get('https://kr.indeed.com/jobs?q=%ED%81%B4%EB%9D%BC%EC%9A%B0%
 soup = BeautifulSoup(result.text, 'html.parser')
 
 pagination = soup.find('div',{'class' : 'pagination'})
-pages = pagination.find_all('a')
-spans = []
+links = pagination.find_all('a')
+pages = []
 
-for  page in pages:
-    spans.append(page.find('span'))
+for  link in links:
+    pages.append(link.find('span').string)
 
-for i in range(0, len(spans)-1):
-    print(spans[i])
-print()
-
-print(spans[:-1])
+print(pages[:-1])
