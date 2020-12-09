@@ -38,10 +38,19 @@ class Service:
                 print('패스워드 불일치')
 
     def editMyInfo(self):
-        pass
+        if Service.login_id is not None:
+            print('로그인 해주세요')
+            return
+        m = vo.Member(id=Service.login_id)
+        m.pwd = input('new PWD : ')
+        m.email = input('new Email : ')
+        self.dao.update(m)
 
     def logout(self):
-        pass
+        Service.login_id = None
 
     def out(self):
-        pass
+        if Service.login_id is None:
+            print('로그인 해주세요')
+        else:
+            self.dao.delete(Service.login_id)

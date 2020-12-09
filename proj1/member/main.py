@@ -1,7 +1,7 @@
 import proj1.member.mem_dao as dao
 import proj1.member.mem_vo as vo
 def main():
-    d = dao.Dao('hr', 'hr', 'localhost:1521/xe', 'utf-8')
+    d = dao.Dao()
     print('전체검색')
     mems = d.selectAll()
     for m in mems:
