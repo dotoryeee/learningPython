@@ -6,5 +6,4 @@ class Member:
         self.email = email
 
     def __str__(self):
-        return 'id : ' + self.id + '/ pwd : ' + self.pwd + '/ name : ' + self.name + '/ email : ' + self.email
-
+        return 'id:'+self.id+'/pwd:'+self.pwd+'/name:'+self.name+'/email:'+self.email
