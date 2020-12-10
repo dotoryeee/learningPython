@@ -11,10 +11,10 @@ def client(soc, addr):
     soc.close()
 
 def main():
-    HOST = '192.168.103.59'  #server ip
-    PORT = 9999         #server port
+    HOST = 'localhost'  #server ip
+    PORT = 8888         #server port
 
-    #server socket open. socket.AF_INET:주소체계(IPV4), socket.SOCK_STREAM:tcp 
+    #server socket open. socket.AF_INET:주소체계(IPV4), socket.SOCK_STREAM:tcp
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     #포트 여러번 바인드하면 발생하는 에러 방지
@@ -35,7 +35,7 @@ def main():
         print('Connected by', addr)
         t = threading.Thread(target=client, args=(client_socket,addr))
         t.start()
-  
+
     server_socket.close()
 
 main()

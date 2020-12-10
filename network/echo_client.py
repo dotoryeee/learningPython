@@ -1,6 +1,6 @@
 import socket
 
-HOST = '127.0.0.1'  
+HOST = 'localhost'
 PORT = 8888
 
 #통신할 소켓 오픈 

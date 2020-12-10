@@ -1,6 +1,6 @@
 import socket
 
-HOST = '127.0.0.1'  #server ip. localhost. or  127.0.0.1
+HOST = 'localhost'  #server ip. localhost. or  127.0.0.1
 PORT = 8888         #server port
 
 #server socket open. socket.AF_INET:주소체계(IPV4), socket.SOCK_STREAM:tcp 
