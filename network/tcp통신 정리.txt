@@ -1,0 +1,17 @@
+서버
+소켓: 전송계층(tcp, udp)과 app을 연결하는 api
+1. 서버 소켓 오픈: socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+2. 바인드(서버 소켓에 ip, port 할당): server_soc.bind(ip, port)
+3. 리슨(클라이언트 받을 준비 완료): server_soc.listen()
+4. 클라이언트 받을 대기하다가 접속 처리: server_soc.accept()
+=>accept()는 접속한 클라이언트와 1:1 통신할 수 있는 클라이언트소켓과 클라언트의 주소를 반환
+5. 클라이언트와 1:1통신. => 메시지 주고 받음. client_soc.recv(크기):소켓에서 메시지 읽음/client_soc.sendall(msg):소켓에 메시지 전송
+6. 클라이언트 소켓을 닫으면 클라이언트와 1:1통신 종료. 서버 소켓은 여전히 열려있음. 다른 클라이언트 접속 가능
+7. 서버 소켓 닫으면. 전체 통신 종료
+
+
+클라이언트
+1. 소켓 오픈:socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+2. 서버에 연결 요청: client_soc.connect(server_ip, server_port) => 서버에 연결 요청  
+3. 서버와 1:1통신. => 메시지 주고 받음. client_soc.recv(크기):소켓에서 메시지 읽음/client_soc.sendall(msg):소켓에 메시지 전송
+4. 클라이언트 소켓을 닫음. 서버와 통신이 끊김
