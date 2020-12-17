@@ -1,45 +1,52 @@
-"""
-Again, the code is broken, you need to create 4 functions.
-  - add_to_dict: Add a word to a dict.
-  - get_from_dict: Get a word from inside a dict.
-  - update_word: Update a word inside of the dict.
-  - delete_from_dict: Delete a word from the dict.
-
-All this functions should check for errors, follow the comments to see all cases you need to cover.
-
-There should be NO ERRORS from Python in the console.
-"""
-#add_to_dict(my_english_dict, "kimchi", "The source of life.")
-def add_to_dict(dictName, name='', value=''):
-  if name == '' or value == '' or name in dictName:
-    print('error')
-  else:    
-    dictName[name] = value
-    print(dictName)
-
-
-#print('\nget_from_dict(my_english_dict, "kimchi"):')
-def get_from_dict(dictName, name=''):
-  if name in dictName and name != '':
-    print(dictName[name])
+def add_to_dict(a_dict, word="", definition=""):
+  if type(a_dict) is not dict:
+    print("You need to send a dictionary. You sent:", type(a_dict))
+  elif word == '' or definition == '':
+    print("You need to send a word and a definition.")
   else:
-    print('error')
+    if word in a_dict:
+      print(f"{word} is already on the dictionary. Won't add.")
+    else:
+      a_dict[word] = definition
+      print(word,"has been added.")
 
-#update_word(my_english_dict, "kimchi", "Food from the gods.")
-def update_word(dictName, name='', newValue=''):
-  if name in dictName and name != '' and newValue != '':
-    dictName[name] = newValue
-    print('updated')
+
+def get_from_dict(a_dict, word=""):
+  if type(a_dict) is not dict:
+    print("You need to send a dictionary. You sent:", type(a_dict))
+  elif word == '':
+    print("You need to send a word to search for.")
   else:
-    print('error')
+    if word not in a_dict:
+      print(f"{word} was not found in this dict.")
+    else:
+      print(f"{word}: {a_dict[word]}") 
 
 
-#delete_from_dict(my_english_dict, "kimchi")
-def delete_from_dict(dictName, name=''):
-  if name in dictName:
-    del dictName[name]
-    print('removed')
-  
+def update_word(a_dict, word="", definition=""):
+  if type(a_dict) is not dict:
+    print("You need to send a dictionary. You sent:", type(a_dict))
+  elif word == "" or definition == "":
+    print("You need to send a word and a definition to update.")
+  else:
+    if word not in a_dict:
+      print(f"{word} is not on the dict. Can't update non-existing word.")
+    else:
+      a_dict[word] = definition
+      print(word, "has been updated to:", definition)
+
+
+def delete_from_dict(a_dict, word=""):
+  if type(a_dict) is not dict:
+    print("You need to send a dictionary. You sent:", type(a_dict))
+  elif word == "":
+    print("You need to specify a word to delete.")
+  else:
+    if word not in a_dict:
+      print(f"{word} is not in this dict. Won't delete.")
+    else:
+      del a_dict[word]
+      print(f"{word} has been deleted.")
 
 # \/\/\/\/\/\/\ DO NOT TOUCH  \/\/\/\/\/\/\
 
